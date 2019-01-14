@@ -47,7 +47,7 @@ class ShoppingBasketController {
     addShoppingItem(item,addToBasket = false){
         if(item instanceof ShoppingItem){
             if( this._items.indexOf(item) === -1 ){
-                const idx = this._items.push(item);
+                const idx = this._items.push(item) -1;
                 if(addToBasket){
                     this.addItemToBasket(idx);
                 }

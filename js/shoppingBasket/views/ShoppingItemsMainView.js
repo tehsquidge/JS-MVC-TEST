@@ -19,7 +19,7 @@ class ShoppingItemsMainView {
                 `<div>
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
-                    <p><strong>price: </strong> £${item.price}</p>
+                    <p><strong>price: </strong> £${item.price.toFixed(2)}</p>
                     <button value="${idx}">Add Item to Basket</button>
                 </div>`;
         });
