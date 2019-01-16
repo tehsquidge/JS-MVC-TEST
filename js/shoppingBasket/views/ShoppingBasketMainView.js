@@ -7,7 +7,7 @@ class ShoppingBasketMainView {
         Events.subscribe('/ShoppingBasket/itemAddedToBasket',function(basket){
             this.render(basket);
         }.bind(this));
-        Events.subscribe('/ShoppingBasket/itemRemovedfromBasket',function(basket){
+        Events.subscribe('/ShoppingBasket/itemRemovedFromBasket',function(basket){
             this.render(basket);
         }.bind(this));
         this.render();

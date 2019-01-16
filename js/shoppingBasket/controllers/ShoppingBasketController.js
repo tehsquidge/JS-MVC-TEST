@@ -64,7 +64,7 @@ class ShoppingBasketController {
     removeShoppingItem(item){
         const idx = this._getItemIndex(item);
         if(idx !== -1){
-            delete this._basket[idx];
+            this.removeItemsFromBasket(idx);
             this._items.splice(idx,1);
             Events.publish('/ShoppingBasket/ShoppingItemRemoved',{
                 'idx': idx,
@@ -92,7 +92,7 @@ class ShoppingBasketController {
 
     removeItemFromBasket(item, count = 1){
         this.updateItemInBasket(item, this.getItemBasketCount(item) - parseInt(count));
-        Events.publish('/ShoppingBasket/itemRemovedfromBasket',this.basket);
+        Events.publish('/ShoppingBasket/itemRemovedFromBasket',this.basket);
     }
 
     removeItemsFromBasket(item){
